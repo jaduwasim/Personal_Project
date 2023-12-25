@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Jadublog | {% block title %} {% endblock title %} </title>
+</head>
+<body>
+ <div class="continer-fluid bg-dark">
+    {% include 'blog/navbar.html' %}
+ </div>
+ <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            {% block msg %}
+            {% endblock msg %}
+        </div>
+    </div>
+    <div class="row">
+        {% block side %}
+        {% endblock side %}
+
+        {% block content %}
+        {% endblock content %}
+    </div>
+ </div>
+  <!-- Start Footer -->
+  <footer id="footer" class="container-fluid bg-dark text-center p-2 mt-5">
+    <small class="text-white">Copyright &copy; 2022 || Designed By Jadu || </small>
+    </footer> <!-- End Footer -->   
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+</body>
+</html>

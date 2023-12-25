@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}Profile {% endblock title %}
+{% block side %}
+<div class="col-sm-2 text-white my-2 text-center">
+    <h4 class="my-5">Your Profile</h4><hr>
+    {% for user in user_profile %}
+    {% if user.userprofile.image.url %}
+    <img src="{{ user.userprofile.image.url }}" class="image--cover" alt="">
+    {% else %}
+    <img src="{% static 'images/bydefaulprofile.jpg' %}" class="image--cover" alt="">
+    {% endif %}
+    <h5>Full Name: {{full_name}}</h5>
+    <p>Email: {{user.email}}</p>
+    {% endfor %}
+    {% for group in groups %}
+    <p>{{group.name}}</p><hr>
+    {% endfor %}
+</div>
+{% endblock side %}

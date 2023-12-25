@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Data</h1>
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+    {% endif %}
+    {% if data %}
+    {% for d in data %}
+    <table>
+        <thead >
+            <tr>Name</tr>
+
+        </thead>
+        <th>
+            <td>{{d.name}}</td>
+            <td><img src="{{d.pimage.url}}" alt=""></td>
+        </th>
+    </table>
+    {%endfor%}
+    {% else %}
+    <h1>No data</h1>
+    {% endif %}
+</body>
+</html>

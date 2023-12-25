@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}Profile Details{% endblock title %}
+{% block side %}
+<div class="col-sm-2 text-white my-2 text-center">
+    <h4 class="my-5">Profile Details</h4><hr>
+    {% if user.user.userprofile.image.url %}
+    <img src="{{ user.user.userprofile.image.url }}" class="image--cover" alt="">
+    {% else %}
+    <img src="{% static 'images/bydefaulprofile.jpg' %}" class="image--cover" alt="">
+    {% endif %}
+    <h5>Full Name: {{user.post_by}}</h5>
+    <p>Email: {{user.user.email}}</p>
+</div>
+{% endblock side %}

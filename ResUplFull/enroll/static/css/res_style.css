@@ -1,0 +1,8 @@
+#id_gender, #id_job_city{
+    list-style-type: none;
+    display: inline-flex;
+}
+body{
+    background-color: rgb(75, 74, 74);
+    color:antiquewhite;
+}

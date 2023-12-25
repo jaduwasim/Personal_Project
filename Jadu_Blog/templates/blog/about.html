@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}About {% endblock title %}
+
+{% block content %}
+<div class="col-sm-10">
+    <h1 class="text-white my-5">About Page</h1>
+    <img src="{% static 'images/deskpot.jpeg' %}" class="image--cover" alt="">
+    <h3>MD WASHIM AKRAM</h3>
+    <h5>(Nick Name : Jadu)</h5>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint voluptate placeat consequuntur beatae totam aut qui officia perspiciatis quod ratione harum ipsam sit assumenda quos atque, molestiae culpa eius nobis.
+    </p>
+</div>
+
+{% endblock content %}

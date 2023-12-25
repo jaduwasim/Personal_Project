@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'enroll/base.html' %}
+
+{% block body_block %}
+Home
+{% endblock %}
+
+{% block title_block %}    
+<div class="container mb-5 ">
+    <h1 class=" alert alert-danger text-center p-5 ">Resume Uploader</h1>
+    <div class="row">
+        <div class="col-sm-8">
+            {% if messages %}
+            {% for message in messages %}
+            <p {% if message.tags %} class="alert alert-{{message.tags}} mb-6" {% endif %}>{{message}}</p>
+            {% endfor %}
+            {% endif%}
+        <form action="" method="post" enctype="multipart/form-data" class="shadow p-5">
+            {% csrf_token %}
+            {% for fm in form %}
+            <div class="form-group mb-3">
+                {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small>
+            </div>
+            {% endfor %}
+            <input type="submit" value="Submit" class="btn btn-primary">
+            {% for error in form.non_fields_errors %}
+            <p class="alert alert-danger my-3">{{error}}</p>
+            {% endfor %}
+        </form>
+    </div>
+    <div class="col sm-4 shadow p-5">
+        <h4 class="text-center mb-3 "><u>List of Candidate</u></h4>
+        {% for candidate in candidates %}
+        {{candidate.id}} : <a href="{% url 'candidate' candidate.id %}">{{candidate.name}}</a><hr>
+        {% endfor %}
+    </div>
+    </div>
+</div>
+{% endblock %}

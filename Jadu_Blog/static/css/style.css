@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(75, 74, 74);
+    color:antiquewhite;
+}
+.form-control{
+    background-color: rgb(177,168,168);
+}
+
+.jumbo-color{
+    background-color: rgb(83, 81,81);
+}
+.image--cover {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  
+    object-fit: cover;
+    object-position: center right;
+  }
+.lead{
+    text-align: center;
+}
+.home{
+    text-align: center;
+}
